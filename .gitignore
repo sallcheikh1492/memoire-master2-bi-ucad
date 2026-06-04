@@ -1,0 +1,29 @@
+# --- Données (non versionnées : ~46 Mo, jeu de données public) ---
+Annee1999.csv
+*.parquet
+
+# --- Cache de l'application ---
+app/_cache/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# --- Node (génération du rapport) ---
+node_modules/
+package-lock.json
+
+# --- Streamlit ---
+.streamlit/secrets.toml
+
+# --- OS / éditeurs ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

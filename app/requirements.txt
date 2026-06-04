@@ -1,0 +1,14 @@
+streamlit>=1.40
+pandas>=2.0
+numpy>=1.24
+scikit-learn>=1.3
+xgboost>=2.0
+statsmodels>=0.14
+plotly>=5.18
+pyarrow>=14
+shap>=0.44
+lifelines>=0.27          # analyse de survie (Kaplan-Meier, Cox)
+tensorflow>=2.10         # reseau LSTM (prevision)
+# Prophet : optionnel. Le backend Stan peut echouer selon l'environnement Windows
+# (signal 0xC0000139 = conflit de DLL). Le code gere son absence (repli SARIMA).
+prophet==1.1.5

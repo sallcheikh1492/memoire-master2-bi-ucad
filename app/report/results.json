@@ -1,0 +1,284 @@
+{
+  "global": {
+    "appels_total": 440837,
+    "appels_servis": 353143,
+    "appels_abandonnes": 87694,
+    "taux_abandon": 19.89,
+    "taux_service": 80.11,
+    "aht_moyen_s": 190.2,
+    "attente_moyenne_s": 98.9,
+    "service_level_pct": 43.6,
+    "nb_agents": 53,
+    "appels_fantomes": 3599
+  },
+  "kpi_type": [
+    {
+      "type_label": "Service courant (hebreu)",
+      "appels": 299919,
+      "taux_abandon": 16.77,
+      "aht_moyen": 182.3,
+      "attente_moyenne": 52.2
+    },
+    {
+      "type_label": "Prospect / nouveau client",
+      "appels": 67435,
+      "taux_abandon": 38.95,
+      "aht_moyen": 112.0,
+      "attente_moyenne": 75.5
+    },
+    {
+      "type_label": "Service NE",
+      "appels": 39197,
+      "taux_abandon": 10.25,
+      "aht_moyen": 271.7,
+      "attente_moyenne": 72.9
+    },
+    {
+      "type_label": "Support Internet",
+      "appels": 20608,
+      "taux_abandon": 27.38,
+      "aht_moyen": 397.6,
+      "attente_moyenne": 81.4
+    },
+    {
+      "type_label": "Bourse / courtage",
+      "appels": 11865,
+      "taux_abandon": 7.39,
+      "aht_moyen": 108.5,
+      "attente_moyenne": 18.1
+    },
+    {
+      "type_label": "Service anglophone",
+      "appels": 1808,
+      "taux_abandon": 32.74,
+      "aht_moyen": 266.2,
+      "attente_moyenne": 91.2
+    },
+    {
+      "type_label": "Autre",
+      "appels": 5,
+      "taux_abandon": 100.0,
+      "aht_moyen": null,
+      "attente_moyenne": 0.0
+    }
+  ],
+  "forecast": [
+    {
+      "modele": "Naif saisonnier",
+      "MAE": 208.14,
+      "RMSE": 263.8,
+      "MAPE_%": 14.93
+    },
+    {
+      "modele": "SARIMA",
+      "MAE": 181.37,
+      "RMSE": 252.3,
+      "MAPE_%": 12.62
+    },
+    {
+      "modele": "LSTM",
+      "MAE": 374.18,
+      "RMSE": 438.87,
+      "MAPE_%": 33.55
+    }
+  ],
+  "abandon_table": [
+    {
+      "Modele": "XGBoost",
+      "Accuracy": 0.7696,
+      "Precision": 0.5846,
+      "Recall": 0.2119,
+      "F1": 0.3111,
+      "AUC-ROC": 0.7246
+    },
+    {
+      "Modele": "Random Forest",
+      "Accuracy": 0.6966,
+      "Precision": 0.4178,
+      "Recall": 0.6,
+      "F1": 0.4926,
+      "AUC-ROC": 0.7196
+    },
+    {
+      "Modele": "Gradient Boosting",
+      "Accuracy": 0.7684,
+      "Precision": 0.5964,
+      "Recall": 0.1746,
+      "F1": 0.2701,
+      "AUC-ROC": 0.7179
+    },
+    {
+      "Modele": "Regression logistique",
+      "Accuracy": 0.6781,
+      "Precision": 0.399,
+      "Recall": 0.6161,
+      "F1": 0.4844,
+      "AUC-ROC": 0.7061
+    }
+  ],
+  "abandon_infos": {
+    "n_appels_file": 259626,
+    "n_entraine": 80000,
+    "taux_abandon_pct": 24.54,
+    "xgboost_dispo": true
+  },
+  "shap_top": [
+    {
+      "variable": "offered_load_30min",
+      "label": "Charge offerte (30 min)",
+      "importance_shap": 0.2917133569717407
+    },
+    {
+      "variable": "priority_0",
+      "label": "Priorite standard",
+      "importance_shap": 0.2529931366443634
+    },
+    {
+      "variable": "month",
+      "label": "Mois",
+      "importance_shap": 0.20831117033958435
+    },
+    {
+      "variable": "priority_2",
+      "label": "Priorite haute",
+      "importance_shap": 0.20667484402656555
+    },
+    {
+      "variable": "hour",
+      "label": "Heure d'arrivee",
+      "importance_shap": 0.12680459022521973
+    },
+    {
+      "variable": "type_NW",
+      "label": "Type: Prospect",
+      "importance_shap": 0.11338236182928085
+    },
+    {
+      "variable": "priority_1",
+      "label": "Priorite 1",
+      "importance_shap": 0.11188873648643494
+    },
+    {
+      "variable": "vru_time",
+      "label": "Duree navigation VRU",
+      "importance_shap": 0.08438627421855927
+    },
+    {
+      "variable": "weekday",
+      "label": "Jour de semaine",
+      "importance_shap": 0.07901997864246368
+    },
+    {
+      "variable": "type_NE",
+      "label": "Type: NE",
+      "importance_shap": 0.06514990329742432
+    }
+  ],
+  "shap_model": "XGBoost",
+  "survie": {
+    "n_appels_file": 259552,
+    "n_abandons": 63573,
+    "taux_abandon_pct": 24.49,
+    "patience_mediane_abandon_s": 51.0,
+    "abandon_moins_10s_pct": 11.5,
+    "abandon_moins_30s_pct": 36.3
+  },
+  "km_medians": {
+    "Support Internet": 292.0,
+    "Service NE": 682.0,
+    "Prospect / nouveau client": 171.0,
+    "Service anglophone": 322.0,
+    "Service courant (hebreu)": 668.0,
+    "Bourse / courtage": 169.0
+  },
+  "cox": [
+    {
+      "variable": "type_NW",
+      "HR": 1.391,
+      "HR_bas": 1.334,
+      "HR_haut": 1.451,
+      "p_value": 0.0
+    },
+    {
+      "variable": "type_TT",
+      "HR": 1.259,
+      "HR_bas": 1.115,
+      "HR_haut": 1.421,
+      "p_value": 0.0002
+    },
+    {
+      "variable": "offered_load_30min",
+      "HR": 1.171,
+      "HR_bas": 1.157,
+      "HR_haut": 1.186,
+      "p_value": 0.0
+    },
+    {
+      "variable": "is_weekend",
+      "HR": 1.014,
+      "HR_bas": 0.952,
+      "HR_haut": 1.081,
+      "p_value": 0.6609
+    },
+    {
+      "variable": "priority_P1",
+      "HR": 1.003,
+      "HR_bas": 0.965,
+      "HR_haut": 1.042,
+      "p_value": 0.8876
+    },
+    {
+      "variable": "hour",
+      "HR": 1.001,
+      "HR_bas": 0.997,
+      "HR_haut": 1.004,
+      "p_value": 0.7622
+    },
+    {
+      "variable": "weekday",
+      "HR": 1.0,
+      "HR_bas": 0.994,
+      "HR_haut": 1.007,
+      "p_value": 0.9272
+    },
+    {
+      "variable": "type_PE",
+      "HR": 0.997,
+      "HR_bas": 0.83,
+      "HR_haut": 1.198,
+      "p_value": 0.9764
+    },
+    {
+      "variable": "type_PS",
+      "HR": 0.913,
+      "HR_bas": 0.878,
+      "HR_haut": 0.949,
+      "p_value": 0.0
+    },
+    {
+      "variable": "priority_P2",
+      "HR": 0.704,
+      "HR_bas": 0.679,
+      "HR_haut": 0.73,
+      "p_value": 0.0
+    },
+    {
+      "variable": "type_NE",
+      "HR": 0.668,
+      "HR_bas": 0.631,
+      "HR_haut": 0.707,
+      "p_value": 0.0
+    }
+  ],
+  "cox_metrics": {
+    "concordance": 0.6387,
+    "n_obs": 60000,
+    "n_events": 14716
+  },
+  "staffing": {
+    "aht": 190.2,
+    "pic_erlangC": 10,
+    "pic_erlangA": 9,
+    "agents_heures": 127.0
+  }
+}
