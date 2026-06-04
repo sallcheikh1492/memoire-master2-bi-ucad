@@ -1,0 +1,7 @@
+# Garantit que les fichiers binaires ne subissent AUCUNE conversion de fin de ligne
+*.parquet binary
+*.pdf binary
+*.docx binary
+*.png binary
+*.jpg binary
+*.ico binary
