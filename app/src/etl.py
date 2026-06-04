@@ -106,11 +106,13 @@ def clean_raw(raw_path: str = config.DATA_RAW) -> pd.DataFrame:
 
 
 def load_clean(force: bool = False) -> pd.DataFrame:
-    """Charge la table propre depuis le cache parquet, ou la reconstruit si absente."""
-    if (not force) and os.path.exists(config.DATA_CLEAN):
-        df = pd.read_parquet(config.DATA_CLEAN)
-        df.attrs["report"] = _build_report(len(df), df)
-        return df
+    """Charge la table propre : cache local, sinon donnees embarquees, sinon reconstruit du CSV."""
+    if not force:
+        for src in (config.DATA_CLEAN, config.DATA_BUNDLED):
+            if os.path.exists(src):
+                df = pd.read_parquet(src)
+                df.attrs["report"] = _build_report(len(df), df)
+                return df
     df = clean_raw()
     try:
         df.to_parquet(config.DATA_CLEAN, index=False)

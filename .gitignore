@@ -1,6 +1,8 @@
 # --- Données (non versionnées : ~46 Mo, jeu de données public) ---
 Annee1999.csv
 *.parquet
+# Exception : données nettoyées embarquées pour le déploiement cloud (19 Mo)
+!app/data/calls_clean.parquet
 
 # --- Cache de l'application ---
 app/_cache/

@@ -1,0 +1,13 @@
+# Dépendances pour le déploiement Streamlit Community Cloud (build léger & fiable).
+# TensorFlow (LSTM) et Prophet sont volontairement omis : l'application les rend
+# optionnels et fonctionne pleinement sans eux (prévision via SARIMA + naïf saisonnier).
+streamlit>=1.40
+pandas>=2.0
+numpy>=1.24
+scikit-learn>=1.3
+xgboost>=2.0
+statsmodels>=0.14
+plotly>=5.18
+pyarrow>=14
+shap>=0.44
+lifelines>=0.27

@@ -8,6 +8,8 @@ PROJECT_ROOT = os.path.dirname(APP_DIR)                                  # .../m
 DATA_RAW = os.path.join(PROJECT_ROOT, "Annee1999.csv")
 CACHE_DIR = os.path.join(APP_DIR, "_cache")
 DATA_CLEAN = os.path.join(CACHE_DIR, "calls_clean.parquet")
+# Donnees nettoyees embarquees dans le depot (pour le deploiement cloud, ou le CSV brut est absent)
+DATA_BUNDLED = os.path.join(APP_DIR, "data", "calls_clean.parquet")
 
 os.makedirs(CACHE_DIR, exist_ok=True)
 
