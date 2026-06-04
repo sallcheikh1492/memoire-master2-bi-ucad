@@ -68,13 +68,38 @@ analyse de survie.
 - **Patience** : médiane des abandons ≈ 51 s ; les **prospects** sont les moins patients
   (médiane ≈ 171 s) vs service courant (≈ 668 s).
 
+---
+
+## 🖼️ Galerie des analyses
+
+> Visualisations produites par l'application à partir des données réelles.
+
+**Charge & demande**
 <p align="center">
-  <img src="app/report/figures/f4_forecast.png" width="45%" alt="Prévision du volume"/>
-  <img src="app/report/figures/f5_roc.png" width="32%" alt="Courbes ROC abandon"/>
+  <img src="app/report/figures/f2_heatmap.png" width="48%" alt="Heatmap de charge jour x heure"/>
+  <img src="app/report/figures/f1_volume.png" width="48%" alt="Volume d'appels quotidien"/>
 </p>
+
+**Prévision du volume (SARIMA · LSTM · naïf)**
 <p align="center">
-  <img src="app/report/figures/f7_km.png" width="42%" alt="Survie de la patience"/>
-  <img src="app/report/figures/f9_staffing.png" width="45%" alt="Dimensionnement Erlang"/>
+  <img src="app/report/figures/f4_forecast.png" width="70%" alt="Prévision réel vs prévu"/>
+</p>
+
+**Prédiction de l'abandon — ROC & interprétabilité SHAP**
+<p align="center">
+  <img src="app/report/figures/f5_roc.png" width="40%" alt="Courbes ROC abandon"/>
+  <img src="app/report/figures/f6_shap.png" width="55%" alt="Importance SHAP"/>
+</p>
+
+**Survie de la patience (Kaplan-Meier) & facteurs de risque (Cox)**
+<p align="center">
+  <img src="app/report/figures/f7_km.png" width="48%" alt="Survie de la patience par type"/>
+  <img src="app/report/figures/f8_cox.png" width="48%" alt="Hazard ratios Cox"/>
+</p>
+
+**Dimensionnement des effectifs (Erlang C / A)**
+<p align="center">
+  <img src="app/report/figures/f9_staffing.png" width="72%" alt="Plan d'effectifs par créneau"/>
 </p>
 
 ---
