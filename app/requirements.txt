@@ -1,18 +1,17 @@
-# Dépendances de l'application.
-# Jeu volontairement léger et compatible Streamlit Community Cloud (build rapide & fiable).
-# Les bibliothèques lourdes/optionnelles ci-dessous sont désactivables : l'app fonctionne
-# sans elles (LSTM, Prophet et SHAP se désactivent proprement).
+# Dépendances de l'application — versions FIGÉES sur un socle stable et éprouvé.
+# Compatible Python 3.11 / 3.12 (à régler dans Streamlit Cloud : Settings → Python 3.12).
+# pandas est borné < 3 : pandas 3.0 introduit des changements cassants.
 streamlit>=1.40
-pandas>=2.0
-numpy>=1.24
-scikit-learn>=1.3
-xgboost>=2.0
-statsmodels>=0.14
-plotly>=5.18
-pyarrow>=14
-lifelines>=0.27
+pandas>=2.0,<3
+numpy>=1.24,<2.2
+scikit-learn>=1.3,<1.7
+xgboost>=2.0,<3
+statsmodels>=0.14,<0.15
+plotly>=5.18,<6
+pyarrow>=14,<18
+lifelines>=0.27,<0.30
 
-# --- Extras optionnels (installer en local pour activer ces fonctionnalités) ---
+# --- Extras optionnels (en local uniquement) ---
 # shap>=0.44          # interprétabilité (page Abandon) — nécessite numba
 # tensorflow>=2.10    # modèle LSTM (page Prévision)
 # prophet>=1.1        # modèle Prophet (page Prévision)
