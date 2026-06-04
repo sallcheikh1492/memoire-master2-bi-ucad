@@ -1,3 +1,7 @@
+# Dépendances de l'application.
+# Jeu volontairement léger et compatible Streamlit Community Cloud (build rapide & fiable).
+# Les bibliothèques lourdes/optionnelles ci-dessous sont désactivables : l'app fonctionne
+# sans elles (LSTM, Prophet et SHAP se désactivent proprement).
 streamlit>=1.40
 pandas>=2.0
 numpy>=1.24
@@ -6,9 +10,9 @@ xgboost>=2.0
 statsmodels>=0.14
 plotly>=5.18
 pyarrow>=14
-shap>=0.44
-lifelines>=0.27          # analyse de survie (Kaplan-Meier, Cox)
-tensorflow>=2.10         # reseau LSTM (prevision)
-# Prophet : optionnel. Le backend Stan peut echouer selon l'environnement Windows
-# (signal 0xC0000139 = conflit de DLL). Le code gere son absence (repli SARIMA).
-prophet==1.1.5
+lifelines>=0.27
+
+# --- Extras optionnels (installer en local pour activer ces fonctionnalités) ---
+# shap>=0.44          # interprétabilité (page Abandon) — nécessite numba
+# tensorflow>=2.10    # modèle LSTM (page Prévision)
+# prophet>=1.1        # modèle Prophet (page Prévision)

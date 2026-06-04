@@ -112,7 +112,9 @@ st.caption("Les valeurs de Shapley (Lundberg & Lee, 2017) décomposent chaque pr
            "en contributions additives des variables — IA explicable.")
 
 if not abandonment.has_shap():
-    st.warning("Librairie `shap` non installée. Exécuter : `pip install shap`.")
+    st.info("ℹ️ L'analyse d'interprétabilité **SHAP** (beeswarm, dépendance, cascade) est "
+            "disponible dans la version locale du projet. Elle est désactivée sur la démo en "
+            "ligne pour un chargement plus léger et rapide.")
     st.stop()
 
 tree_models = [m for m in detailed if m in ("XGBoost", "Random Forest", "Gradient Boosting")]
