@@ -14,6 +14,8 @@ Application décisionnelle complète — **Business Intelligence + Machine Learn
 prévision du volume d'appels, l'analyse de la performance des agents et la prévention des
 abandons. Le projet s'appuie sur le corpus réel **AnonymousBank** (≈ 444 000 appels, 1999).
 
+### 🚀 [**Voir la démo en ligne (Streamlit)**](https://cheikh-sall1492.streamlit.app/)
+
 ---
 
 ## 🎯 Objectifs
